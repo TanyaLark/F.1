@@ -49,7 +49,8 @@ navigator.geolocation.getCurrentPosition(
                 return current.distanceToPerson - next.distanceToPerson;
             });
 
-            for (let i = 0; i < 5; i++) {
+            let numberOfNearestATMs = 5;
+            for (let i = 0; i < numberOfNearestATMs; i++) {
                 let result = `${i + 1} Адрес: ${answer.devices[i].fullAddressRu} 
 Расстояние до пользователя: ${answer.devices[i].distanceToPerson} м`;
                 console.log(result);
@@ -60,6 +61,3 @@ navigator.geolocation.getCurrentPosition(
     },
     error => console.log('Error!', error)
 )
-
-
-
